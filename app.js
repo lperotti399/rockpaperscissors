@@ -27,3 +27,7 @@ function setComputerSelection () {
 }
 
 console.log(setComputerSelection());
+
+let getPlayerChoice = prompt("Rock Paper Scissors SHOOT!  (Enter your choice)")
+let setPlayerSelection = getPlayerChoice[0].toUpperCase() + getPlayerChoice.toLowerCase().substring(1)
+
