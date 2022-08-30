@@ -43,7 +43,7 @@ Write a function that plays a single round of Rock Paper Scissors.
 The function should take two parameters - the playerSelection
 and computerSelection and return a string that declares the winner of the round
 like so: "You Lose!  Paper beats Rock"
-    Mamke your function's playerSelection parameter case-insensitive
+    Make your function's playerSelection parameter case-insensitive
     (so users can input rock, ROCK, RocK or any other variation)
 
 Write a new funciton called game().  Call the playRound function
