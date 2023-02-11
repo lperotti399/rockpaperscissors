@@ -1,73 +1,80 @@
 
-//A random number is generated and assigned as the computer's selection.
-function getComputerChoice () {
-    return Math.floor(Math.random()* 3);
-}
-
-let computerChoiceNum = getComputerChoice();
-
-//The random number is converted into a set of values - Rock Paper Scissors
+//A random number is generated and assigned as the computer"s selection.
+//The random number is converted into a set of values - rock paper scissors
 function setComputerSelection () {
+    let computerChoiceNum = Math.floor(Math.random()* 3);
     let computerChoiceText;
 
     switch (computerChoiceNum) {
         case 0:
-            computerChoiceText = "Rock";
+            computerChoiceText = "rock";
             break;
         case 1:
-            computerChoiceText = "Paper";
+            computerChoiceText = "paper";
             break;
         case 2:
-            computerChoiceText = "Scissors"
+            computerChoiceText = "scissors"
             break;
     }
     return computerChoiceText;
 }
 
-let computerSelection = setComputerSelection();
-let getPlayerChoice = prompt("Rock Paper Scissors SHOOT!  (Enter your choice)")
-let playerSelection = getPlayerChoice[0].toUpperCase() + getPlayerChoice.toLowerCase().substring(1);
-let userScore = parseInt(0);
-let computerScore = parseInt(0);
+//let computerSelection = setComputerSelection();
+//let getPlayerChoice = prompt("rock paper scissors SHOOT!  (Enter your choice)")
+
 function playRound(computerSelection, playerSelection) {
     
-   if(computerSelection === 'Rock' && playerSelection === 'Scissors') {
-    ++computerScore;
-    return 'Rock BEATS Scissors.  You LOSE!';
+   if(computerSelection === "rock" && playerSelection === "scissors") {
+    computerScore++;
+    return "rock BEATS scissors.  You LOSE!";
    }
-   else if(computerSelection === 'Scissors' && playerSelection === 'Paper') {
-    ++computerScore;
-    return 'Scissors BEATS Paper.  You LOSE!';
+   else if(computerSelection === "rock" && playerSelection === "paper") {
+    userScore++;
+    return "paper BEATS rock.  You WIN!";
    }
-   else if(computerSelection === 'Paper' && playerSelection === 'Rock') {
-    ++computerScore;
-    return 'Paper BEATS Rock.  You LOSE!';
+   else if(computerSelection === "rock" && playerSelection === "rock") {
+    userScore++;
+    return "rock TIES rock.  You TIE!";
    }
-   else if(computerSelection === 'Rock' && playerSelection === 'Paper') {
-    ++userScore;
-    return 'Paper BEATS Rock.  You WIN!';
+
+   else if(computerSelection === "scissors" && playerSelection === "paper") {
+    computerScore++;
+    return "scissors BEATS paper.  You LOSE!";
    }
-   else if(computerSelection === 'Paper' && playerSelection === 'Scissors') {
-    ++userScore;
-    return 'Scissors BEATS Paper.  You WIN!';
-   }
-   else if(computerSelection === 'Scissors' && playerSelection === 'Rock') {
-    ++userScore;
-    return 'Rock BEATS Scissors.  You WIN!';
+   else if(computerSelection === "scissors" && playerSelection === "rock") {
+    userScore++;
+    return "rock BEATS scissors.  You WIN!";
 }
+else if(computerSelection === "scissors" && playerSelection === "scissors") {
+    userScore++;
+    return "scissors TIES scissors.  You TIE!";
 }
-let roundOutputText = playRound(computerSelection, playerSelection);
-//console.log(roundOutputText);
-//console.log(playerSelection);
-//console.log(computerSelection);
+   else if(computerSelection === "paper" && playerSelection === "rock") {
+    computerScore++;
+    return "paper BEATS rock.  You LOSE!";
+   }
+   
+   else if(computerSelection === "paper" && playerSelection === "scissors") {
+    userScore++;
+    return "scissors BEATS paper.  You WIN!";
+   }
+   else if(computerSelection === "paper" && playerSelection === "paper") {
+    userScore++;
+    return "paper TIES paper.  You TIE!";
+   }
+}
 
 
+
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
 
 for(var i=0;i<5;i++){
     let playerSelection = prompt("Pick a move");
-    let computerSelection = setComputerSelection()
-    console.log(roundOutputText)
+    const computerSelection = setComputerSelection()
+    console.log(playRound(playerSelection, computerSelection))
     console.log("your score = " + userScore);
     console.log("Computer's score = " + computerScore);
 }
-
+if(computerScore> userScore) {console.log('You are the Loser')}
+else {console.log('You are the Winner')}
