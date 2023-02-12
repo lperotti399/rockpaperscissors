@@ -29,7 +29,13 @@ the desired output?
 >> Logic is determined to rank which value will beat which value
 >> A single round of the game is played
 >> Create logic that creates rounds, keeps score and reports a winner or loser at the end of 5 rounds
-
+>> Add Rock, Paper, Scissor images for buttons that users click
+>> Create logic that listens to each button and puts the response of each within the game
+>> Create a welcome message that changes after the user starts the game
+>> Make the welcome message change as the game progresses to the outcome of each round
+>> Announce the winner of the game once one player reaches 5
+>> Create a score board starts out as 0 0
+>> Make the score board update as the game progresses
 
 
 Exercise Steps:
