@@ -71,7 +71,8 @@ let computerScore = parseInt(0);
 
 for(var i=0;i<5;i++){
 //User is prompted to enter a value of Rock Paper or Scissors.
-    let playerSelection = prompt("Pick a move");
+    let playerSelection = 0
+    //prompt("Pick a move");
     const computerSelection = setComputerSelection()
 //A single round of the game is played
     console.log(playRound(playerSelection, computerSelection))
