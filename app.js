@@ -70,15 +70,32 @@ else if(computerSelection === "scissors" && playerSelection === "scissors") {
 
 
 for(var i=0;i<10;i++){
+//Break the loop once a player reaches 5 points
     if(userScore===5 || computerScore ===5) {break;}
-//User is prompted to enter a value of Rock Paper or Scissors.
-    let playerSelection = prompt("Pick a move");
+
+//Get a list of buttons
+let buttons = document.querySelectorAll('button');
+
+//Set playerSelection variable
+let playerSelection = 0
+
+//Set the playerSection to the id of the button click when clicked
+buttons.forEach((button) => {
+    button.addEventListener('click', () =>{
+         playerSelection = button.id;
+    })
+})
     const computerSelection = setComputerSelection()
 //A single round of the game is played
     console.log(playRound(playerSelection, computerSelection))
+
+//Log your score
     console.log("your score = " + userScore);
+
+//Log computer score
     console.log("Computer's score = " + computerScore);
 }
+//Log final score
 if(computerScore> userScore) {
     
     console.log(`Your Score: ${userScore}`)
@@ -90,3 +107,10 @@ else {
     console.log(`Computer Score: ${computerScore}`)
     console.log('You are the Winner')
 }
+
+/*let buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () =>{
+        console.log(button.id);
+    })
+})*/
