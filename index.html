@@ -9,24 +9,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>ROCK.&nbsp;&nbsp;&nbsp;PAPER.&nbsp;&nbsp;&nbsp;SCISSORS.&nbsp;&nbsp;&nbsp;SHOOT!</h1>
-    <table>
-        <tr>
-            <th>Your Score</th>
-            <th>Computer Score</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-    </table>
-    <p>Feeling Lucky???<br><br>Try your odds at beating our super computer in the classic game of ROCK PAPER SCISSORS SHOOT!<br><br>Click your first choice to start:<br>
-    <div>
-        <button><img src="imgs/rock.png" alt="rock"></button>
-        <button><img src="imgs/paper.png" alt="paper"></button>
-        <button><img src="imgs/scissors.png" alt="scissors"></button>
-    </div>
+    <header>
+        <div>
+            <h1>ROCK.&nbsp;&nbsp;&nbsp;PAPER.&nbsp;&nbsp;&nbsp;SCISSORS.&nbsp;&nbsp;&nbsp;SHOOT!</h1>
+        </div>
+        
+    </header>
+    <main>
+        <section class="score">
+            <div class="score-board">
+                <div class="item">
+                    <p>Your Score</p>
+                    <p>0</p>
+                </div>
+                <div class="item">
+                    <p>Computer Score</p>
+                    <p>0</p>
+                </div>
+            </div>
+        </section>
+        <section class="message-board">
+            <div>
+                <p>
+                    Feeling Lucky???
+                    <br><br>
+                    Try your odds at beating our super computer in the classic game of ROCK PAPER SCISSORS SHOOT!
+                    <br><br>
+                    Click your first choice to start:<br>
+                </p>
+            </div>
+        </section>
+        <section class="user-selections">
+            <div class="rps-container">
+                    <button class="item">
+                        <img src="imgs/rock.png" alt="rock">
+                    </button>
+                    <button class="item">
+                        <img src="imgs/paper.png" alt="paper">
+                    </button>
+                    <button class="item">
+                        <img src="imgs/scissors.png" alt="scissors">
+                    </button>
+            </div>
+            
+            
+            
+        </section>
 
-    
+    </main>
 </body>
 </html>

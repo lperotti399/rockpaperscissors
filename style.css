@@ -1,0 +1,17 @@
+.rps-container, .score-board {
+    display: flex;
+    flex-direction: row;
+}
+main img {
+    width: 100%;
+  }
+
+  .item {
+    flex: 1;
+    margin: 2%;
+    text-align: center;
+  }
+  
+  .item > img {
+    width: 100%;
+  }
