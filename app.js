@@ -20,7 +20,8 @@ function setComputerSelection () {
     }
     return computerChoiceText;
 }
-
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
 
 function playRound(computerSelection, playerSelection) {
 //Logic is determined to rank which value will beat which value
@@ -66,13 +67,12 @@ else if(computerSelection === "scissors" && playerSelection === "scissors") {
 
 
 
-let userScore = parseInt(0);
-let computerScore = parseInt(0);
 
-for(var i=0;i<5;i++){
+
+for(var i=0;i<10;i++){
+    if(userScore===5 || computerScore ===5) {break;}
 //User is prompted to enter a value of Rock Paper or Scissors.
-    let playerSelection = 0
-    //prompt("Pick a move");
+    let playerSelection = prompt("Pick a move");
     const computerSelection = setComputerSelection()
 //A single round of the game is played
     console.log(playRound(playerSelection, computerSelection))
