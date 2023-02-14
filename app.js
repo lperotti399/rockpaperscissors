@@ -112,6 +112,15 @@ buttons.forEach((button) => {
     )
 })
 
+//Change message board upon user click
+const para = document.createElement('p');
+para.innerText = 'Hello World'
+const intro = document.querySelector('#intro')
+const message = document.querySelector('#message')
+message.removeChild(intro)
+message.appendChild(para)
+
+
 
     
 
