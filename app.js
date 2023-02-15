@@ -88,22 +88,46 @@ buttons.forEach((button) => {
     const computerSelection = setComputerSelection()
     //A single round of the game is played
     //Log Round score
-    console.log(playRound(playerSelection, computerSelection))
+    //console.log(playRound(playerSelection, computerSelection))
    
 //Change message board upon user click
 const oldPara = document.querySelector("div#message > p")
 const newPara = document.createElement('p');
-newPara.innerText = playRound(playerSelection, computerSelection)
+
+if((computerScore > userScore) && (computerScore ==5 || userScore ==5)
+) {newPara.innerText =`GAME OVER. Your Score: ${userScore}.  Computer Score: ${computerScore}.  You are the Loser`}
+else if((computerScore < userScore) && (computerScore ==5 || userScore ==5)
+) {newPara.innerText =`GAME OVER. Your Score: ${userScore}.  Computer Score: ${computerScore}.  You are the Winner`}
+
+else{newPara.innerText = playRound(playerSelection, computerSelection)}
 
 const message = document.querySelector('#message')
 message.removeChild(oldPara)
 message.appendChild(newPara)
 
-    //Log your score
-    console.log("your score = " + userScore);
-    //Log computer score
+//Change user score
+const oldUserScore = document.querySelector("div#user-score > p")
+const newUserScore = document.createElement('p');
+newUserScore.innerText = userScore
+
+const userScoreMessage = document.querySelector('#user-score')
+userScoreMessage.removeChild(oldUserScore)
+userScoreMessage.appendChild(newUserScore)
+
+//Change computer score
+const oldCompScore = document.querySelector("div#comp-score > p")
+const newCompScore = document.createElement('p');
+newCompScore.innerText = computerScore
+
+const compScoreMessage = document.querySelector('#comp-score')
+compScoreMessage.removeChild(oldCompScore)
+compScoreMessage.appendChild(newCompScore)
+
+//Log your score
+console.log("your score = " + userScore);
+//Log computer score
     console.log("Computer's score = " + computerScore);
-    //Log final score
+//Log final score
     if((computerScore > userScore) && (computerScore ==5 || userScore ==5)
         ) {
     console.log(`GAME OVER`)
