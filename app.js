@@ -27,41 +27,41 @@ function playRound(computerSelection, playerSelection) {
 //Logic is determined to rank which value will beat which value
    if(computerSelection === "rock" && playerSelection === "scissors") {
     computerScore+=1;
-    return "rock BEATS scissors.  You LOSE!";
+    return "rock BEATS scissors.  You LOSE!  Click to try again:";
    }
    else if(computerSelection === "rock" && playerSelection === "paper") {
     userScore+=1;
-    return "paper BEATS rock.  You WIN!";
+    return "paper BEATS rock.  You WIN!  Click to try again:";
    }
    else if(computerSelection === "rock" && playerSelection === "rock") {
     userScore+=1;
-    return "rock TIES rock.  You TIE!";
+    return "rock TIES rock.  You TIE!  Click to try again:";
    }
 
    else if(computerSelection === "scissors" && playerSelection === "paper") {
     computerScore+=1;
-    return "scissors BEATS paper.  You LOSE!";
+    return "scissors BEATS paper.  You LOSE!  Click to try again:";
    }
    else if(computerSelection === "scissors" && playerSelection === "rock") {
     userScore+=1;
-    return "rock BEATS scissors.  You WIN!";
+    return "rock BEATS scissors.  You WIN!  Click to try again:";
 }
 else if(computerSelection === "scissors" && playerSelection === "scissors") {
     userScore+=1;
-    return "scissors TIES scissors.  You TIE!";
+    return "scissors TIES scissors.  You TIE!  Click to try again:";
 }
    else if(computerSelection === "paper" && playerSelection === "rock") {
     computerScore+=1;
-    return "paper BEATS rock.  You LOSE!";
+    return "paper BEATS rock.  You LOSE!  Click to try again:";
    }
    
    else if(computerSelection === "paper" && playerSelection === "scissors") {
     userScore+=1;
-    return "scissors BEATS paper.  You WIN!";
+    return "scissors BEATS paper.  You WIN!  Click to try again:";
    }
    else if(computerSelection === "paper" && playerSelection === "paper") {
     userScore+=1;
-    return "paper TIES paper.  You TIE!";
+    return "paper TIES paper.  You TIE!  Click to try again:";
    }
 }
 
@@ -89,6 +89,16 @@ buttons.forEach((button) => {
     //A single round of the game is played
     //Log Round score
     console.log(playRound(playerSelection, computerSelection))
+   
+//Change message board upon user click
+const oldPara = document.querySelector("div#message > p")
+const newPara = document.createElement('p');
+newPara.innerText = playRound(playerSelection, computerSelection)
+
+const message = document.querySelector('#message')
+message.removeChild(oldPara)
+message.appendChild(newPara)
+
     //Log your score
     console.log("your score = " + userScore);
     //Log computer score
@@ -111,15 +121,16 @@ buttons.forEach((button) => {
     
     )
 })
+/*
+const oldPara = document.querySelector("div#message > p")
 
-//Change message board upon user click
-const para = document.createElement('p');
-para.innerText = 'Hello World'
-const intro = document.querySelector('#intro')
-const message = document.querySelector('#message')
-message.removeChild(intro)
-message.appendChild(para)
+const newPara = document.createElement('p');
+newPara.innerText = 'test'
 
+const message = document.querySelector('div#message')
+message.removeChild(oldPara)
+message.appendChild(newPara)
+*/
 
 
     
